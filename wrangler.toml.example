@@ -1,0 +1,17 @@
+name = "nextjs-cloudflare-pages-d1-drizzle"
+compatibility_date = "2024-05-12"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+[[d1_databases]]
+migrations_dir = "./db/migrations"
+binding = "DB"                                       # i.e. available in your Worker on env.DB
+database_name = "my-database-name"                   # When you create your D1 DB, you choose the name
+database_id = "my-database-id"
+
+[env.preview]
+name = "preview"
+[[env.preview.d1_databases]]
+migrations_dir = "./db/migrations"
+binding = "DB"                                       # i.e. available in your Worker on env.DB
+database_name = "my-preview-database-name"           # When you create your D1 DB, you choose the name
+database_id = "my-preview-database-id"
